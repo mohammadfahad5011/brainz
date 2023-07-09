@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel css  -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+
+    <!-- Tailwindcss CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "13px",
+              sm: "15px",
+              lg: "15px",
+              xl: "15px",
+            },
+            screens: {
+              sm: "600px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1281px",
+            },
+          },
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              clash: ["Clash Display Variable", "sans-serif"],
+              satoshi: ["Satoshi Variable", "sans-serif"],
+            },
+            colors: {
+              textColor: "#7e7d80",
+              themeColor: "#15BFFD",
+              themeColor2: "#48ffb6",
+              themeColor3: "#B095DA",
+              white: "#FFFFFF",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: Clash Display Variable;
+        src: url("./assets/Fonts/ClashDisplay-Variable.ttf");
+      }
+
+      @font-face {
+        font-family: Satoshi Variable;
+        src: url("./assets/Fonts/Satoshi-Variable.ttf");
+      }
+      @layer base {
+        body {
+          font-family: "Inter", sans-serif;
+        }
+      }
+      @layer utilities {
+        select {
+          background-image: url(./assets//img/icons/chev-down.png);
+          background-position: right 18px center;
+          background-repeat: no-repeat;
+          background-size: 11px 6px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+
+      .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 0;
+      }
+
+      .owl-stage {
+        padding: 50px 0;
+      }
+
+      .owl-nav .owl-prev {
+        display: none;
+      }
+
+      .smart_move-section .owl-carousel .owl-item img {
+        width: auto;
+      }
+      .owl-dots {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .owl-dots .owl-dot span {
+        display: inline-block !important;
+        background-color: #2e314b !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 4px;
+      }
+
+      .owl-dots .active span {
+        display: inline-block !important;
+        background-color: rgba(21, 191, 253, 0.7) !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .right_fixd_carousel .owl-carousel .owl-stage-outer {
+        margin-right: -1000px;
+      }
+    </style>
+
+    <title>Presale</title>
+  </head>
+
+  <body class="bg-[#080B2A]">
+    <!--mobile menu  -->
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8 ms-auto">
+          <button
+            class="border-[2px] border-themeColor p-2 navbar-close cursor-pointer"
+          >
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-themeColor"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="staking.html"
+                >Staking</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="private_sale.html"
+                >Private sale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="presale.html"
+                >Presale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="governance.html"
+                >Governance</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="#"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!--======== Header Area Start =========-->
+    <header
+      class="shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] lg:shadow-none bg-[#0B1538] lg:bg-transparent absolute top-0 left-0 w-full z-20 pb-[15px] pt-[30px] md:pb-[40px] md:pt-[40px] bg-transparent"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center">
+          <!-- --logo--  -->
+          <a href="index.html">
+            <img
+              class="hidden md:block"
+              src="assets/img/logos/logo.svg"
+              alt=""
+            />
+
+            <img
+              class="block md:hidden"
+              src="assets/img/icons/moble_logo.svg"
+              alt=""
+            />
+          </a>
+          <!-- --nav links --  -->
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-themeColor p-[10px] bg-[#141735] rounded-[32px] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+          <!-- --Border-btn--  -->
+          <div class="flex items-center gap-4 md:gap-10">
+            <a
+              href="#"
+              class="leading-none text-[12px] sm:text-[20px] py-[12px] sm:py-[15px] px-[18px] sm:px-[25px] text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+              >connect wallet</a
+            >
+            <span class="inline-block lg:hidden navbar-burger cursor-pointer">
+              <img src="assets/img/icons/burger_icon.svg" alt="" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--======== Header Area End =========-->
+
+    <!--======== Main Area Start =========-->
+    <main class="main overflow-hidden relative z-10">
+      <!-- --shapes--  -->
+      <div class="hidden md:block">
+        <img
+          src="assets/img/bg/shape_left.png"
+          class="absolute top-0 left-0 -z-10"
+          alt=""
+        />
+
+        <img
+          src="assets/img/bg/shape_right.png"
+          class="absolute top-0 right-0 -z-10"
+          alt=""
+        />
+      </div>
+      <!--======== Hero Area Start =========-->
+      <section
+        class="mt-[150px] bg-transparent pt-[100px] pd-[100px] md:pb-[200px] relative"
+      >
+        <!-- ---stars--  -->
+        <div class="hidden md:block">
+          <img
+            class="absolute top-[10%] left-[90%] -z-10"
+            src="assets/img/icons/big_blue_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[10%] left-[60%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[15%] left-[15%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+
+          <img
+            class="absolute top-[60%] left-[5%] -z-10"
+            src="assets/img/icons/medium_hite_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute bottom-[10%] left-[50%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+        </div>
+
+        <!-- ---stars--small-screen  -->
+        <div class="block md:hidden">
+          <img
+            class="absolute -z-10 top-[7%] right-[10%]"
+            src="assets/img/icons/yellow_big_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute -z-10 top-[20%] left-[0%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+        </div>
+        <div class="container">
+          <div class="hero_content z-20">
+            <div class="hero-text max-w-[1090px] mx-auto">
+              <h1
+                class="text-[32px] md:text-[48px] text-[#fff] text-center font-[600] font-clash tracking-[0.96px]"
+              >
+                Prepare for the Ultimate Crypto Spectacle: The Brainz Finance
+                Presale Carnival - Where Brilliance Meets Opportunity!
+              </h1>
+              <p
+                class="text-[20px] md:text-[26px] py-[35px] text-[#ADAEB9] text-center font-[400] font-inter tracking-[0.26px]"
+              >
+                Step right up, ladies and gentlemen, as we unveil the most
+                thrilling presale opportunity of the century! The Brainz Finance
+                Presale Carnival is your front-row ticket to an exhilarating
+                ride filled with breathtaking rewards and jaw-dropping returns.
+                Get ready to unleash your inner genius and make a smart move
+                that will set you apart from the crowd!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== Hero Area End =========-->
+
+      <!--======== Features  section Start =========-->
+      <section class="right_fixd_carousel py-[80px]">
+        <div class="container">
+          <div class="carsoul_wrapper owl-carousel">
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[428px] p-10 shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] border-[1px] border-themeColor rounded-[16px]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3 class="text-[26px] text-[#fff] font-[500] font-clash">
+                  Be a Financial Maestro
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[44px] text-[20px] text-[#fff] font-[500] font-satoshi leading-[32px]"
+              >
+                You've got the power, the knowledge, and the wit to make smart
+                investments. With the Brainz Finance Presale Carnival, you
+                become the conductor of your financial destiny. Play the
+                symphony of success as you secure your share of $Brainz tokens,
+                the ultimate masterpiece in the crypto universe.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[428px] p-10 shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] border-[1px] border-themeColor rounded-[16px]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3 class="text-[26px] text-[#fff] font-[500] font-clash">
+                  The Genius Club
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[44px] text-[20px] text-[#fff] font-[500] font-satoshi leading-[32px]"
+              >
+                Welcome to the elite club of brilliance and visionaries. By
+                participating in our presale, you join a league of exceptional
+                minds who understand the art of seizing opportunities. Rub
+                shoulders with the best and brightest in the crypto world and
+                bask in the glow of shared success. The Brainz Finance Presale
+                Carnival is where true geniuses gather!
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[428px] p-10 shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] border-[1px] border-themeColor rounded-[16px]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3 class="text-[26px] text-[#fff] font-[500] font-clash">
+                  Be a Financial Maestro
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[44px] text-[20px] text-[#fff] font-[500] font-satoshi leading-[32px]"
+              >
+                You've got the power, the knowledge, and the wit to make smart
+                investments. With the Brainz Finance Presale Carnival, you
+                become the conductor of your financial destiny. Play the
+                symphony of success as you secure your share of $Brainz tokens,
+                the ultimate masterpiece in the crypto universe.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[428px] p-10 shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] border-[1px] border-themeColor rounded-[16px]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3 class="text-[26px] text-[#fff] font-[500] font-clash">
+                  The Genius Club
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[44px] text-[20px] text-[#fff] font-[500] font-satoshi leading-[32px]"
+              >
+                Welcome to the elite club of brilliance and visionaries. By
+                participating in our presale, you join a league of exceptional
+                minds who understand the art of seizing opportunities. Rub
+                shoulders with the best and brightest in the crypto world and
+                bask in the glow of shared success. The Brainz Finance Presale
+                Carnival is where true geniuses gather!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== Features  section End =========-->
+
+      <!--======== don't miss section  Start =========-->
+      <section class="">
+        <div class="container">
+          <!-- --inner--  -->
+          <div
+            class="pt-[73.35px] pb-[58px] px-[60px] rounded-[13px] bg-[url('assets/img/bg/dont_miss_bg.png')] bg-cover"
+          >
+            <h2
+              class="text-center md:text-left text-[32px] text-[#fff] font-[600] font-clash"
+            >
+              Don’t Miss The Chance !
+            </h2>
+            <p
+              class="text-center md:text-left text-[20px] md:text-[24px] py-[36px] leading-[38px] text-[rgba(255,255,255,0.8)] font-[400] font-inter"
+            >
+              Don't miss out on this brain-tickling, money-spinning
+              extravaganza.
+              <span class="text-themeColor"
+                >The Brainz Finance Presale Carnival</span
+              >
+              is where brilliance meets opportunity, and you're invited to take
+              center stage. Join the ranks of the brightest minds, secure your
+              share of the future, and let your investments flourish. The
+              spotlight is on you, so make the smartest investment of your
+              lifetime!
+            </p>
+            <!-- --link-btn--  -->
+            <a
+              href="#"
+              class="hidden md:flex gap-3 items-center text-[20px] text-themeColor font-inter font-[500] transition hover:text-white"
+              >Learn more
+              <img src="assets/img/icons/link_btn_right_arrow.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--======== don't miss section  End =========-->
+
+      <!--======== Disclaimer section  Start =========-->
+      <section class="hidden md:block py-[120px]">
+        <div class="container">
+          <h2 class="text-[31px] text-[#fff] font-[700] font-clash">
+            Disclaimer:
+          </h2>
+          <p
+            class="text-[22px] py-[36px] leading-[38px] text-[rgba(255,255,255,0.8)] font-[400] font-inter"
+          >
+            Disclaimer: Prepare for a mind-bending experience that may result in
+            occasional bursts of genius, unstoppable excitement, and an
+            irresistible urge to outsmart the financial universe. Side effects
+            may include sudden wealth, an elevated sense of investment prowess,
+            and a reputation as the smartest investor in town. Embrace the
+            brilliance and ride the wave of prosperity!
+          </p>
+        </div>
+      </section>
+      <!--======== Disclaimer section  End =========-->
+
+      <!--======== Finance  section Start =========-->
+      <section class="py-[50px]">
+        <div class="container">
+          <!-- finance_inner  -->
+          <div
+            class="pt-[41px] pb-[28px] pl-[47px] pr-[38px] bg-transparent md:bg-[url('assets/img/bg/Finance_bg.png')] bg-cover rounded-[12px]"
+          >
+            <!-- ---finance-Top--  -->
+            <div
+              class="grid gap-0 md:gap-10 xl:gap-28 pb-8 grid-cols-12 border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+            >
+              <div class="mb-7 md:mb-0 col-span-12 lg:col-span-6">
+                <div class="grid gap-7 grid-cols-12">
+                  <div class="col-span-12 md:col-span-5">
+                    <div
+                      class="mx-auto md:mx-0 max-w-[213px] max-h-[213px] border-[1px] border-themeColor rounded-full p-2 flex justify-center items-center"
+                    >
+                      <img src="assets/img/thumbs/finance_thum.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-span-12 md:col-span-7">
+                    <!-- single_item  -->
+                    <div class="text-center md:text-left mb-[60px]">
+                      <h6
+                        class="mb-2 text-[23px] text-white font-[700] font-satoshi"
+                      >
+                        $Brainz Finance tokens
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        1 ETH = 100,000 $Brainz
+                      </p>
+                    </div>
+
+                    <!-- single_item  -->
+                    <div class="text-center md:text-left">
+                      <h6
+                        class="mb-2 text-[23px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                      >
+                        TOTAL $Brainz RAISE
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        10,000,000 $Brainz
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-span-12 mt-6 lg:mt-0 lg:col-span-6">
+                <div class="grid grid-cols-12">
+                  <div class="col-span-6">
+                    <!-- single_item  -->
+                    <div class="mb-[60px]">
+                      <h6
+                        class="mb-2 text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                      >
+                        Soft cap /hard cap
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        10 ETH - 100 ETH
+                      </p>
+                    </div>
+
+                    <!-- single_item  -->
+                    <div class="">
+                      <h6
+                        class="mb-2 text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                      >
+                        MIN AMOUNT
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        1 ETH
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-span-6">
+                    <!-- single_item  -->
+                    <div class="mb-[60px]">
+                      <h6
+                        class="mb-2 text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                      >
+                        YOUR BALANCE
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        0 ETH
+                      </p>
+                    </div>
+                    <!-- single_item  -->
+                    <div class="">
+                      <h6
+                        class="mb-2 text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                      >
+                        MAX AMOUNT
+                      </h6>
+                      <p
+                        class="text-[18px] text-themeColor font-[500] font-satoshi"
+                      >
+                        5 ETH
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ---finance-middle--  -->
+            <div class="py-8">
+              <div class="grid gap-10 xl:gap-28 grid-cols-12">
+                <div class="col-span-12 md:col-span-6">
+                  <h6
+                    class="text-[18px] text-[rgba(255,255,255,0.5)] font-[700] font-satoshi"
+                  >
+                    Progress ( 0.00%)
+                  </h6>
+                  <div
+                    class="my-5 max-w-[501px] h-[15px] bg-[#4D4F64] rounded-[11px] overflow-hidden"
+                  >
+                    <div
+                      class="bg-themeColor h-full w-[54%] text-xs leading-none py-1 rounded-[11px]"
+                    ></div>
+                  </div>
+                  <div class="max-w-[501px] flex justify-between">
+                    <h6
+                      class="text-[18px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                    >
+                      1 ETH
+                    </h6>
+                    <h6
+                      class="text-[18px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                    >
+                      100 ETH
+                    </h6>
+                  </div>
+                </div>
+
+                <div class="col-span-12 md:col-span-6">
+                  <h6
+                    class="mb-[18px] text-[21px] text-[rgba(255,255,255,0.5)] font-[700] font-satoshi"
+                  >
+                    Sale Starts In :
+                  </h6>
+                  <p
+                    class="text-[23px] text-[rgb(255,255,255)] font-[700] font-satoshi"
+                  >
+                    26:19:40:25
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- ---finance-bottom--  -->
+            <div class="mt-8 grid gap-0 xl:gap-28 grid-cols-12">
+              <div class="col-span-12 xl:col-span-6">
+                <h6
+                  class="text-[19px] text-[rgb(255,255,255)] font-[700] font-satoshi"
+                >
+                  Select The Amount
+                </h6>
+                <div class="flex items-center gap-[10px]">
+                  <div
+                    class="p-[12px] h-[65px] flex items-center my-5 border-[1.5px] border-white rounded-[30px] overflow-hidden"
+                  >
+                    <div class="flex items-center">
+                      <input
+                        class="w-[75%] px-5 py-5 h-full text-[19px] text-[rgba(255,255,255,0.6)] placeholder:text-[19px] placeholder:text-[rgba(255,255,255,0.6)] focus:outline-none focus:border-none bg-transparent"
+                        type="text "
+                        placeholder="ETH"
+                      />
+                      <div class="">
+                        <button
+                          class="py-[8px] px-[39px] rounded-[30px] bg-themeColor text-[16px] text-[#000] font-[500] font-inter"
+                        >
+                          MAX
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:block">
+                    <button
+                      class="py-[18px] px-[83.5px] rounded-[30px] bg-themeColor text-[20px] text-[#000] font-[500] font-inter"
+                    >
+                      BUY
+                    </button>
+                  </div>
+                </div>
+
+                <div class="block md:hidden">
+                  <button
+                    class="mb-4 w-[94%] py-[13px] px-[83.5px] rounded-[30px] bg-themeColor text-[20px] text-[#000] font-[500] font-inter"
+                  >
+                    BUY
+                  </button>
+                </div>
+
+                <h6
+                  class="text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                >
+                  Balance :
+                  <span
+                    class="text-[18px] text-[rgb(255,255,255)] font-[700] font-satoshi"
+                    >0.0000 ETH</span
+                  >
+                </h6>
+              </div>
+              <div
+                class="text-center md:text-left col-span-12 mt-10 xl:mt-0 xl:col-span-6"
+              >
+                <h6
+                  class="text-[19px] text-[rgb(255,255,255)] font-[700] font-satoshi"
+                >
+                  Share Affiliate link and win 3% Rewards
+                </h6>
+                <div class="flex items-center gap-[10px]">
+                  <div
+                    class="p-[12px] h-[65px] flex items-center my-5 border-[1.5px] border-white rounded-[30px] overflow-hidden"
+                  >
+                    <div class="flex items-center justify-between">
+                      <input
+                        class="w-[70%] sm:w-[65%] px-5 py-5 h-full text-[19px] text-[rgb(255,255,255)] placeholder:text-[15px] sm:placeholder:text-[17px] placeholder:text-[rgb(255,255,255)] focus:outline-none focus:border-none bg-transparent"
+                        type="text "
+                        placeholder="https://Brainz.com/finance/user"
+                      />
+                      <div class="">
+                        <button
+                          class="py-[8px] px-[10px] rounded-[30px] bg-white text-[11px] sm:text-[16px] text-[#000] font-[500] font-inter"
+                        >
+                          Copy Affiliate link
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h6
+                  class="text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                >
+                  Number of referrals :
+                  <span
+                    class="text-[18px] text-[rgb(255,255,255)] font-[700] font-satoshi"
+                    >0</span
+                  >
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== Finance  section End =========-->
+
+      <!--======== connect section Start =========-->
+
+      <section class="pt-12">
+        <div class="container">
+          <!-- connect inner  -->
+          <div
+            class="pt-[78px] pb-[58px] px-[42px] rounded-[12px] bg-[url('assets/img/bg/connect_bg.png')] bg-cover"
+          >
+            <!-- ---connect-top--  -->
+            <div>
+              <h2
+                class="mb-[29px] text-[20px] sm:text-[30px] text-center text-[#fff] font-[500] font-satoshi leading-[46px]"
+              >
+                Connect your wallet and claim your rewards
+              </h2>
+
+              <div class="flex justify-center">
+                <a
+                  href="#"
+                  class="w-full md:w-auto text-center text-[20px] py-[15px] px-[87px] text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                  >connect wallet</a
+                >
+              </div>
+            </div>
+            <!-- ---connect-bottom--  -->
+            <div class="mt-[53px] grid grid-cols-12">
+              <div
+                class="col-span-12 md:col-span-6 pb-12 md:pb-0 border-b-[1px] border-r-0 border-b-[rgba(255,255,255,0.1) md:border-r-[1px] md:border-r-[rgba(255,255,255,0.5) md:border-b-0"
+              >
+                <div class="text-center md:text-left w-full md:w-max mx-auto">
+                  <h6
+                    class="mb-[8px] text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                  >
+                    Total amount of $brainz to claim
+                  </h6>
+
+                  <h2
+                    class="text-[30px] text-[#90FF9C] font-[700] font-satoshi"
+                  >
+                    0 $Brainz
+                  </h2>
+
+                  <button
+                    class="mt-[43px] w-[192px] py-[14px] px-[50.5px] rounded-[30px] bg-[#90FF9C] text-[20px] text-[#000] font-[500] font-inter"
+                  >
+                    CLAIM
+                  </button>
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-6 pt-12 md:pt-0">
+                <div class="text-center md:text-left w-full md:w-max mx-auto">
+                  <h6
+                    class="mb-[8px] text-[21px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                  >
+                    Total Affiliate Earnings
+                  </h6>
+
+                  <h2
+                    class="text-[30px] text-themeColor font-[700] font-satoshi"
+                  >
+                    0 $Brainz
+                  </h2>
+
+                  <button
+                    class="mt-[43px] w-[192px] py-[14px] px-[50.5px] rounded-[30px] bg-themeColor text-[20px] text-[#000] font-[500] font-inter"
+                  >
+                    CLAIM
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== connect section End =========-->
+    </main>
+    <!--======== Main Area End =========-->
+
+    <footer class="relative z-10 md:bg-[#111131] bg-transparent">
+      <!-- --shape--  -->
+      <div class="hidden md:block">
+        <img
+          class="absolute bottom-0 left-0 -z-10"
+          src="assets/img/bg/footer_left_shape.png"
+          alt=""
+        />
+        <img
+          class="absolute bottom-0 right-0 -z-10"
+          src="assets/img/bg/footer-right_shape.png"
+          alt=""
+        />
+      </div>
+      <div class="hidden md:block">
+        <img src="assets/img/bg/Footer_bg.png" alt="" class="w-full" />
+      </div>
+      <div class="container">
+        <div class="py-[70px] flex justify-center items-center">
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-themeColor p-[10px] bg-[#141735] rounded-[32px] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="pb-[90px] flex flex-col md:flex-row gap-14 md:gap-4 justify-between items-center"
+        >
+          <a href="#"><img src="assets/img/logos/logo.svg" alt="" /></a>
+          <div class="flex gap-2">
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/twitter (2) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/facebook (4) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/instagram (1) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/medium 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/github 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/reddit 1.svg" alt=""
+            /></a>
+          </div>
+          <p class="text-[10.5px] text-[#fff] font-[400]">
+            © 2023 Brainz. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script>
+      $(".carsoul_wrapper").owlCarousel({
+        items: 1,
+        nav: true,
+        dots: false,
+        loop: false,
+        margin: 35,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+          "<i class='far fa-arrow-left'></i>",
+          "<img src='assets/img/icons/Slider arrow.svg' alt=''>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          768: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          1000: {
+            items: 2,
+            dots: false,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+          1400: {
+            items: 2,
+            dots: false,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+        },
+      });
+
+      // smart_carsoul_wrapper
+
+      $(".smart_carsoul_wrapper").owlCarousel({
+        items: 1,
+        nav: true,
+        dot: false,
+        loop: false,
+        margin: 121,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+          "<i class='far fa-arrow-left'></i>",
+          "<img src='assets/img/icons/Slider arrow.svg' alt=''>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+            stagePadding: 0,
+          },
+          768: {
+            items: 1,
+            nav: false,
+            stagePadding: 0,
+          },
+          1024: {
+            items: 2,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+          1400: {
+            items: 2,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+        },
+      });
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

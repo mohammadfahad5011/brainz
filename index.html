@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel css  -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+
+    <!-- Tailwindcss CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "13px",
+              sm: "15px",
+              lg: "15px",
+              xl: "15px",
+            },
+            screens: {
+              sm: "600px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1281px",
+            },
+          },
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              clash: ["Clash Display Variable", "sans-serif"],
+              satoshi: ["Satoshi Variable", "sans-serif"],
+            },
+            colors: {
+              textColor: "#7e7d80",
+              themeColor: "#15BFFD",
+              themeColor2: "#48ffb6",
+              themeColor3: "#B095DA",
+              white: "#FFFFFF",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: Clash Display Variable;
+        src: url("./assets/Fonts/ClashDisplay-Variable.ttf");
+      }
+
+      @font-face {
+        font-family: Satoshi Variable;
+        src: url("./assets/Fonts/Satoshi-Variable.ttf");
+      }
+      @layer base {
+        body {
+          font-family: "Inter", sans-serif;
+        }
+      }
+      @layer utilities {
+        select {
+          background-image: url(./assets//img/icons/chev-down.png);
+          background-position: right 18px center;
+          background-repeat: no-repeat;
+          background-size: 11px 6px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+
+      .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 0;
+      }
+      .owl-nav .owl-prev {
+        display: none;
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .owl-dots .owl-dot span {
+        display: inline-block !important;
+        background-color: #2e314b !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 4px;
+      }
+
+      .owl-dots .active span {
+        display: inline-block !important;
+        background-color: rgba(21, 191, 253, 0.7) !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .right_fixd_carousel .owl-carousel .owl-stage-outer {
+        margin-right: -1000px;
+      }
+    </style>
+
+    <title>Brainz</title>
+  </head>
+
+  <body class="bg-[#080B2A]">
+    <!--mobile menu  -->
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8 ms-auto">
+          <button
+            class="border-[2px] border-themeColor p-2 navbar-close cursor-pointer"
+          >
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-themeColor"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="staking.html"
+                >Staking</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="private_sale.html"
+                >Private sale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="presale.html"
+                >Presale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="governance.html"
+                >Governance</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="#"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!--======== Header Area Start =========-->
+    <header
+      class="shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] lg:shadow-none bg-[#0B1538] lg:bg-transparent absolute top-0 left-0 w-full z-20 pb-[15px] pt-[30px] md:pb-[40px] md:pt-[40px] bg-transparent"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center">
+          <!-- --logo--  -->
+          <a href="index.html">
+            <img
+              class="hidden md:block"
+              src="assets/img/logos/logo.svg"
+              alt=""
+            />
+
+            <img
+              class="block md:hidden"
+              src="assets/img/icons/moble_logo.svg"
+              alt=""
+            />
+          </a>
+          <!-- --nav links --  -->
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+          <!-- --Border-btn--  -->
+          <div class="flex items-center gap-4 md:gap-10">
+            <a
+              href="#"
+              class="leading-none text-[12px] sm:text-[20px] py-[12px] sm:py-[15px] px-[18px] sm:px-[25px] text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+              >connect wallet</a
+            >
+            <span class="inline-block lg:hidden navbar-burger cursor-pointer">
+              <img src="assets/img/icons/burger_icon.svg" alt="" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--======== Header Area End =========-->
+
+    <!--======== Main Area Start =========-->
+    <main class="main overflow-hidden relative z-10">
+      <img
+        src="assets/img/bg/shape_left.png"
+        class="absolute top-0 left-0 -z-10"
+        alt=""
+      />
+
+      <img
+        src="assets/img/bg/shape_right.png"
+        class="absolute top-0 right-0 -z-10"
+        alt=""
+      />
+      <!--======== Hero Area Start =========-->
+      <section
+        class="mt-[150px] bg-transparent pt-[100px] pb-[100px] md:pb-[200px] relative"
+      >
+        <!-- --shapes--  -->
+
+        <!-- ---stars--  -->
+        <div class="hidden md:block">
+          <img
+            class="absolute top-[10%] left-[90%]"
+            src="assets/img/icons/yellow_big_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[10%] left-[60%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[15%] left-[15%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+
+          <img
+            class="absolute top-[60%] left-[5%]"
+            src="assets/img/icons/whiite_small_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute bottom-[10%] left-[50%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+        </div>
+
+        <!-- ---stars--small-screen  -->
+        <div class="block md:hidden">
+          <img
+            class="absolute -z-10 top-[7%] right-[10%]"
+            src="assets/img/icons/yellow_big_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute -z-10 top-[20%] left-[0%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+        </div>
+
+        <div class="container">
+          <div class="hero_content z-20">
+            <div class="hero-text max-w-[786px] mx-auto">
+              <h1
+                class="text-[32px] md:text-[48px] text-[#fff] text-center font-[600] font-clash tracking-[0.96px]"
+              >
+                <span class="text-themeColor">The first meme coin</span> to
+                harness the power of Liquidity Staking Derivative Protocol
+              </h1>
+              <p
+                class="text-[20px] md:text-[26px] py-[35px] text-[#ADAEB9] text-center font-[400] font-inter tracking-[0.26px]"
+              >
+                Accelerate Your Financial Journey: Staking Success Awaits with
+                Brainz Finance!
+              </p>
+            </div>
+            <!-- --hero-btns--  -->
+
+            <div class="flex gap-10 justify-center">
+              <!-- --solid-btn--  -->
+              <a
+                href="#"
+                class="text-[15px] md:text-[20px] text-[#000] leading-none bg-themeColor py-[12px] px-[24px] md:py-[15px] md:px-[35px] hover:text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+                >Launch dApp</a
+              >
+              <!-- --link-btn--  -->
+              <a
+                href="#"
+                class="flex gap-3 items-center text-[15px] md:text-[20px] leading-none py-[12px] md:py-[15px] text-themeColor font-inter font-[500] transition hover:text-white"
+                >Learn more
+                <img src="assets/img/icons/link_btn_right_arrow.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== Hero Area End =========-->
+
+      <!--======== we are section Start =========-->
+      <section
+        class="py-[70px] md:py-[95px] bg-[url('assets/img/bg/we_are_bg.png')] h-full w-full bg-cover"
+      >
+        <div class="container">
+          <div class="grid grid-cols-12 gap-0 lg:gap-16">
+            <div class="mb-7 lg:mb-0 col-span-12 lg:col-span-5">
+              <img
+                class="mx-auto lg:mx-0"
+                src="assets/img/thumbs/we_are_thum.png"
+                alt=""
+              />
+            </div>
+            <div class="col-span-12 lg:col-span-7">
+              <!-- --section-heading--  -->
+              <h2
+                class="text-left mb-[22px] text-[32px] md:text-[45px] text-[#fff] font-[600] font-clash"
+              >
+                Who we are ?
+              </h2>
+
+              <div class="">
+                <p
+                  class="text-left mb-4 text-[20px] md:text-[24px] text-[#ADAEB9] font-[400] font-satoshi tracking-[0.24px] leading-[34px]"
+                >
+                  The first meme coin to harness the power of Liquidity Staking
+                  Derivative Protocol.
+                </p>
+                <p
+                  class="text-left text-[20px] md:text-[24px] text-[#ADAEB9] font-[400] font-satoshi tracking-[0.24px] leading-[34px]"
+                >
+                  Our project merges the playful nature of meme coins with the
+                  intelligent strategies of smart investors, creating an
+                  innovative and rewarding experience. In this white paper, we
+                  will delve into the unique features of Brainz.Finance,
+                  including our lucrative rewards system, dynamic yield model,
+                  and automatic repeat feature.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== Power section Start =========-->
+      <section class="mb-10 md:mb-0 pt-[90px]">
+        <div class="container">
+          <div
+            class="flex flex-wrap gap-0 sm:gap-7 lg:gap-[40px] xl:gap-[60px] items-center"
+          >
+            <!-- --power-left--  -->
+            <div class="order-2 lg:order-1 w-full lg:w-[55%]">
+              <div class="relative pt-5 pb-14">
+                <!-- --star--  -->
+                <div class="hidden md:block">
+                  <img
+                    class="absolute right-[-10px] top-[40%]"
+                    src="assets/img/icons/yellow_big_star.svg"
+                    alt=""
+                  />
+
+                  <img
+                    class="absolute left-[10%] top-[5%]"
+                    src="assets/img/icons/yellow_medium_star.svg"
+                    alt=""
+                  />
+                  <img
+                    class="absolute left-[40%] top-0"
+                    src="assets/img/icons/yellow_medium_star.svg"
+                    alt=""
+                  />
+                  <img
+                    class="absolute left-[35%] bottom-[5%]"
+                    src="assets/img/icons/yellow_medium_star.svg"
+                    alt=""
+                  />
+                </div>
+                <h2
+                  class="text-center md:text-left text-[32px] md:text-[35px] leading-[60px] text-themeColor font-[600] font-clash"
+                >
+                  Unleash the Power of Your Investments with Brainz Finance -
+                  Transforming Ordinary into Extraordinary!
+                </h2>
+              </div>
+
+              <div class="w-full lg:max-w-[708px]">
+                <p
+                  class="mb-5 text-[21px] text-[#ADAEB9] font-[400] font-satoshi leading-[30px]"
+                >
+                  Our rewards system is designed to make your heart race with
+                  excitement. By staking your ETH or stETH,
+                </p>
+                <p
+                  class="text-center md:text-left mb-5 text-[21px] text-[#ADAEB9] font-[400] font-satoshi leading-[30px]"
+                >
+                  Our rewards system is designed to make your heart race with
+                  excitement. By staking your ETH or stETH, you stand a chance
+                  to earn a jaw-dropping APY ranging from 0% to a mind-boggling
+                  2500%! Imagine the thrill of hitting the jackpot and seeing
+                  your assets multiply exponentially. But wait, there's more!
+                </p>
+
+                <p
+                  class="text-center md:text-left mb-5 text-[21px] text-[#ADAEB9] font-[400] font-satoshi leading-[30px]"
+                >
+                  We guarantee a solid 20% APY in $Brainz rewards, ensuring a
+                  steady stream of earnings.
+                </p>
+              </div>
+            </div>
+            <!-- --power-right--  -->
+            <div class="order-1 lg:order-2 w-full lg:w-[40%] mb-3 lg:mb-0">
+              <div
+                class="mx-auto lg:mx-0 relative flex justify-between h-[342px] w-[80%] sm:w-[480px]"
+              >
+                <div class="shrink-0 flex items-end">
+                  <div class="">
+                    <h6
+                      class="text-[26.933px] text-[#AB0202] font-[700] font-clash tracking-[0.26px]"
+                    >
+                      0%
+                    </h6>
+                    <p
+                      class="text-[21.546px] text-white font-[400] font-clash tracking-[0.215px]"
+                    >
+                      jaw-dropping <br />
+                      APY ranging from
+                    </p>
+                  </div>
+                </div>
+                <img
+                  class="absolute top-[30%] left-[27%]"
+                  src="assets/img/icons/power_arrow.svg"
+                  alt=""
+                />
+                <div class="shrink-0 relative">
+                  <!-- --starts -- -->
+                  <img
+                    class="absolute top-[-4%] right-0"
+                    src="assets/img/icons/green_star_big.svg"
+                    alt=""
+                  />
+                  <img
+                    class="absolute top-[-4%] left-[2%]"
+                    src="assets/img/icons/green_star_small.svg"
+                    alt=""
+                  />
+
+                  <h6
+                    class="text-[26.933px] text-[#90FF9C] font-[700] font-clash tracking-[0.26px]"
+                  >
+                    2500%!
+                  </h6>
+                  <p
+                    class="text-[21.546px] text-white font-[400] font-clash tracking-[0.215px]"
+                  >
+                    mind-boggling
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== Power section End =========-->
+
+      <!--======== How to stake  section Start =========-->
+      <section class="right_fixd_carousel py-[80px]">
+        <div class="container">
+          <div class="">
+            <!-- --section-heading--  -->
+            <h2
+              class="mb-14 text-[23px] md:text-[45px] text-[#fff] font-[600] font-clash"
+            >
+              How to stake
+            </h2>
+          </div>
+
+          <div class="carsoul_wrapper owl-carousel">
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[416px] p-10 border-[1px] border-themeColor rounded-[16px] bg-[#141735]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex-col-reverse gap-8 md:gap-0 md:flex-row flex pb-11 md:items-center md:justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3
+                  class="text-[20px] md:text-[26px] text-[#fff] font-[700] font-clash"
+                >
+                  Connect Your Ethereum Wallet
+                </h3>
+                <span
+                  class="text-[20px] md:text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[35px] md:w-[50px] h-[35px] md:h-[50px] rounded-full"
+                  >1</span
+                >
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[35px] md:mt-[44px] text-[17px] md:text-[23px] text-[#fff] font-[400] font-inter leading-[32px]"
+              >
+                Strap on your investing boots and connect your Ethereum wallet
+                to the Brainz Finance platform. It's time to level up your
+                financial game with a touch of wit and wisdom.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[416px] p-10 border-[1px] border-themeColor rounded-[16px] bg-[#141735]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex-col-reverse gap-8 md:gap-0 md:flex-row flex pb-11 md:items-center md:justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3
+                  class="text-[20px] md:text-[26px] text-[#fff] font-[700] font-clash"
+                >
+                  Deposit 0.1ETH/stETH and Above
+                </h3>
+                <span
+                  class="text-[20px] md:text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[35px] md:w-[50px] h-[35px] md:h-[50px] rounded-full"
+                  >2</span
+                >
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[35px] md:mt-[44px] text-[17px] md:text-[23px] text-[#fff] font-[400] font-inter leading-[32px]"
+              >
+                Make a bold move and stake a minimum of 0.1ETH/stETH and above.
+                We're talking about serious investments here, not mere pocket
+                change. Prepare to set the stage for some exciting
+                opportunities.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[416px] p-10 border-[1px] border-themeColor rounded-[16px] bg-[#141735]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex-col-reverse gap-8 md:gap-0 md:flex-row flex pb-11 md:items-center md:justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3
+                  class="text-[20px] md:text-[26px] text-[#fff] font-[700] font-clash"
+                >
+                  Connect Your Ethereum Wallet
+                </h3>
+                <span
+                  class="text-[20px] md:text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[35px] md:w-[50px] h-[35px] md:h-[50px] rounded-full"
+                  >3</span
+                >
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[35px] md:mt-[44px] text-[17px] md:text-[23px] text-[#fff] font-[400] font-inter leading-[32px]"
+              >
+                Strap on your investing boots and connect your Ethereum wallet
+                to the Brainz Finance platform. It's time to level up your
+                financial game with a touch of wit and wisdom.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div
+              class="min-h-[416px] p-10 border-[1px] border-themeColor rounded-[16px] bg-[#141735]"
+            >
+              <!-- --card-heading- -->
+              <div
+                class="flex-col-reverse gap-8 md:gap-0 md:flex-row flex pb-11 md:items-center md:justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+              >
+                <h3
+                  class="text-[20px] md:text-[26px] text-[#fff] font-[700] font-clash"
+                >
+                  Deposit 0.1ETH/stETH and Above
+                </h3>
+                <span
+                  class="text-[20px] md:text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[35px] md:w-[50px] h-[35px] md:h-[50px] rounded-full"
+                  >4</span
+                >
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="mt-[35px] md:mt-[44px] text-[17px] md:text-[23px] text-[#fff] font-[400] font-inter leading-[32px]"
+              >
+                Make a bold move and stake a minimum of 0.1ETH/stETH and above.
+                We're talking about serious investments here, not mere pocket
+                change. Prepare to set the stage for some exciting
+                opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== How to stake  section End =========-->
+
+      <!--========   Possibilities  section Start =========-->
+      <section class="py-[100px]">
+        <div class="container">
+          <h2
+            class="max-w-[1204px] mx-auto text-center text-[32px] md:text-[40px] leading-[60px] text-white font-[600] font-clash"
+          >
+            Imagine The Possibilities: Picture 1ETH/stETH soaring with a
+            staggering 2500% increase!
+          </h2>
+
+          <p
+            class="py-[43px] max-w-[1044px] mx-auto text-center text-[20px] md:text-[24px] text-[#ADAEB9] font-[500] font-inter leading-[32px]"
+          >
+            Don't miss out on this extraordinary opportunity to stake and earn
+            with Brainz Finance. Connect your wallet, make your deposit, and let
+            your investments skyrocket. Get ready to experience a new realm of
+            financial possibilities!
+          </p>
+
+          <div class="hidden md:flex justify-center">
+            <!-- --solid-btn--  -->
+            <a
+              href="#"
+              class="text-[20px] text-[#000] bg-themeColor py-[15px] px-[35px] hover:text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+              >Launch dApp</a
+            >
+          </div>
+          <div class="block md:hidden">
+            <div class="flex gap-10 justify-center">
+              <!-- --solid-btn--  -->
+              <a
+                href="#"
+                class="text-[15px] md:text-[20px] text-[#000] leading-none bg-themeColor py-[12px] px-[24px] md:py-[15px] md:px-[35px] hover:text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+                >Launch dApp</a
+              >
+              <!-- --link-btn--  -->
+              <a
+                href="#"
+                class="flex gap-3 items-center text-[15px] md:text-[20px] leading-none py-[12px] md:py-[15px] text-themeColor font-inter font-[500] transition hover:text-white"
+                >Learn more
+                <img src="assets/img/icons/link_btn_right_arrow.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========   Possibilities  section End =========-->
+
+      <!--========  Road map section Start =========-->
+      <section
+        class="relative z-10 py-[100px] bg-[#121533] bg-h-full bg-w-full bg-cover"
+      >
+        <!-- --shape--  -->
+        <img
+          class="absolute bottom-0 left-0 -z-10"
+          src="assets/img/bg/road_left_shape.png"
+          alt=""
+        />
+        <img
+          class="absolute top-0 right-0 -z-10"
+          src="assets/img/bg/road_right_shape.png"
+          alt=""
+        />
+        <div class="container">
+          <h2
+            class="mb-[60px] text-[20px] sm:text-[32px] text-center text-[#fff] font-[600] font-clash"
+          >
+            Road map
+          </h2>
+
+          <div class="max-w-[1200px] mx-auto">
+            <!-- --timeline--  -->
+            <div
+              class="relative after:absolute after:top-[130px] sm:after:top-[150px] after:left-8 lg:after:left-1/2 after:-z-0 after:w-1 after:h-[75%] after:bg-[#15BFFD] p-0 lg:p-4"
+            >
+              <!-- --single_timeline--left  -->
+              <div
+                class="pl-[15%] pr-[5%] py-3 lg:pl-16 w-full lg:w-1/2 relative"
+              >
+                <!-- --timeline-number--for largre screen  -->
+                <div
+                  class="hidden absolute w-6 h-6 lg:flex justify-center items-center rounded-full top-1/2 translate-y-[-50%] lg:-right-[14px] bg-[#15BFFD] z-10"
+                ></div>
+                <!-- --timeline-number--for small screen  -->
+                <div
+                  class="lg:hidden absolute w-6 h-6 flex justify-center items-center rounded-full top-1/2 translate-y-[-50%] left-[21px] lg:-left-6 bg-[#15BFFD] z-10"
+                ></div>
+                <!-- --single_timeline-content--  -->
+                <div class="relative p-3 max-w-[510px]">
+                  <img
+                    src="assets/img/bg/single_Road_ map_bg.png"
+                    alt=""
+                    class="hidden md:block absolute right-0 top-0 h-full"
+                  />
+
+                  <img
+                    src="assets/img/bg/road_map_bg_right.png"
+                    alt=""
+                    class="block md:hidden absolute left-0 top-0 h-full"
+                  />
+
+                  <div
+                    class="p-6 bg-[rgba(255,255,255,0.05)] border-[1px] border-themeColor rounded-[8px]"
+                  >
+                    <h4
+                      class="mb-3 text-[12px] sm:text-[20px] leading-[30px] text-white font-[500] font-clash"
+                    >
+                      PHASE 1
+                    </h4>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      1. Website launch
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      2. dApp Test
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      3. dApp launch
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      4. Private round
+                    </li>
+                  </div>
+
+                  <!-- --timeline-arrow--large screen  -->
+
+                  <span
+                    class="hidden lg:block absolute top-1/2 translate-y-[-50%] right-[-13.5%]"
+                  >
+                    <img src="assets/img/icons/line_left.svg" alt=""
+                  /></span>
+                  <!-- --timeline-arrow--small screen  -->
+                  <span
+                    class="block lg:hidden absolute top-1/2 translate-y-[-50%] left-[-14%]"
+                  >
+                    <img src="assets/img/icons/line_right.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+
+              <!-- --single_timeline--right  -->
+              <div
+                class="left-0 lg:left-1/2 pl-[15%] pr-[5%] py-3 lg:pl-16 w-full lg:w-1/2 relative"
+              >
+                <!-- --timeline-number--  -->
+                <div
+                  class="absolute w-6 h-6 flex justify-center items-center rounded-full left-[21px] top-1/2 lg:-left-[10px] translate-y-[-50%] bg-[#15BFFD] z-10"
+                ></div>
+
+                <!-- --single_timeline-content--  -->
+                <!-- --single_timeline-content--  -->
+                <div class="relative p-3 max-w-[510px]">
+                  <img
+                    src="assets/img/bg/road_map_bg_right.png"
+                    alt=""
+                    class="absolute left-0 top-0 h-full"
+                  />
+
+                  <div
+                    class="p-6 bg-[rgba(255,255,255,0.05)] border-[1px] border-themeColor rounded-[8px]"
+                  >
+                    <h4
+                      class="mb-3 text-[12px] sm:text-[20px] leading-[30px] text-white font-[500] font-clash"
+                    >
+                      PHASE 2
+                    </h4>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      1.Presale
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      2. Launch
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      3. Airdrop
+                    </li>
+                  </div>
+
+                  <!-- --timeline-arrow--  -->
+
+                  <span class="absolute top-1/2 translate-y-[-50%] left-[-14%]">
+                    <img src="assets/img/icons/line_right.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+
+              <!-- --single_timeline--left  -->
+              <div
+                class="pl-[15%] pr-[5%] py-3 lg:pl-16 w-full lg:w-1/2 relative"
+              >
+                <!-- --timeline-number--for largre screen  -->
+                <div
+                  class="hidden absolute w-6 h-6 lg:flex justify-center items-center rounded-full top-1/2 translate-y-[-50%] lg:-right-[14px] bg-[#15BFFD] z-10"
+                ></div>
+                <!-- --timeline-number--for small screen  -->
+                <div
+                  class="lg:hidden absolute w-6 h-6 flex justify-center items-center rounded-full top-1/2 translate-y-[-50%] left-[21px] lg:-left-6 bg-[#15BFFD] z-10"
+                ></div>
+                <!-- --single_timeline-content--  -->
+                <div class="relative p-3 max-w-[510px]">
+                  <img
+                    src="assets/img/bg/single_Road_ map_bg.png"
+                    alt=""
+                    class="hidden md:block absolute right-0 top-0 h-full"
+                  />
+
+                  <img
+                    src="assets/img/bg/road_map_bg_right.png"
+                    alt=""
+                    class="block md:hidden absolute left-0 top-0 h-full"
+                  />
+
+                  <div
+                    class="p-6 bg-[rgba(255,255,255,0.05)] border-[1px] border-themeColor rounded-[8px]"
+                  >
+                    <h4
+                      class="mb-3 text-[12px] sm:text-[20px] leading-[30px] text-white font-[500] font-clash"
+                    >
+                      PHASE 3
+                    </h4>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      1. Coinmarketcap/Coingecko
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      2. Community Partnerships
+                    </li>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      3. CEX listings
+                    </li>
+                  </div>
+
+                  <!-- --timeline-arrow--large screen  -->
+
+                  <span
+                    class="hidden lg:block absolute top-1/2 translate-y-[-50%] right-[-13.5%]"
+                  >
+                    <img src="assets/img/icons/line_left.svg" alt=""
+                  /></span>
+                  <!-- --timeline-arrow--small screen  -->
+                  <span
+                    class="block lg:hidden absolute top-1/2 translate-y-[-50%] left-[-14%]"
+                  >
+                    <img src="assets/img/icons/line_right.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+
+              <!-- --single_timeline--right  -->
+              <div
+                class="left-0 lg:left-1/2 pl-[15%] pr-[5%] py-3 lg:pl-16 w-full lg:w-1/2 relative"
+              >
+                <!-- --timeline-number--  -->
+                <div
+                  class="absolute w-6 h-6 flex justify-center items-center rounded-full left-[21px] top-1/2 lg:-left-[10px] translate-y-[-50%] bg-[#15BFFD] z-10"
+                ></div>
+
+                <!-- --single_timeline-content--  -->
+                <!-- --single_timeline-content--  -->
+                <div class="relative p-3 max-w-[510px]">
+                  <img
+                    src="assets/img/bg/road_map_bg_right.png"
+                    alt=""
+                    class="absolute left-0 top-0 h-full"
+                  />
+
+                  <div
+                    class="p-6 bg-[rgba(255,255,255,0.05)] border-[1px] border-themeColor rounded-[8px]"
+                  >
+                    <h4
+                      class="mb-3 text-[12px] sm:text-[20px] leading-[30px] text-white font-[500] font-clash"
+                    >
+                      PHASE 4
+                    </h4>
+                    <li
+                      class="list-none mb-2 text-[12px] sm:text-[20px] text-white font-[500] font-clash"
+                    >
+                      Coming soon ...
+                    </li>
+                  </div>
+
+                  <!-- --timeline-arrow--  -->
+
+                  <span class="absolute top-1/2 translate-y-[-50%] left-[-14%]">
+                    <img src="assets/img/icons/line_right.svg" alt=""
+                  /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========  Road map  section Start =========-->
+
+      <!--========  Why Choose section Start =========-->
+      <section class="relative z-10 py-[150px]">
+        <!-- --shape--  -->
+        <img
+          class="absolute bottom-0 left-0 -z-10"
+          src="assets/img/bg/road_left_shape.png"
+          alt=""
+        />
+        <img
+          class="absolute top-0 right-0 -z-10"
+          src="assets/img/bg/road_right_shape.png"
+          alt=""
+        />
+        <div class="container">
+          <div class="grid grid-cols-12 lg:gap-[53px]">
+            <div class="col-span-12 lg:col-span-6">
+              <div class="mb-7 max-w-[616px] lg:mb-[105px]">
+                <h2
+                  class="mb-[24px] text-center sm:text-left text-[32px] sm:text-[45px] text-[#fff] font-[600] font-clash"
+                >
+                  Why Choose Brainz?
+                </h2>
+
+                <p
+                  class="text-center sm:text-left text-[20px] sm:text-[24px] text-[#FFFFFF] font-[500] font-inter leading-[32px]"
+                >
+                  the first meme coin to harness the power of Liquidity Staking
+                  Derivative Protocol. Our project merges the playful nature of
+                  meme coins with the intelligent strategies of smart investors.
+                </p>
+              </div>
+              <div class="block lg:hidden my-16">
+                <img src="assets/img/thumbs/why-thum.png" alt="" />
+              </div>
+
+              <!-- --single_items--  -->
+              <div
+                class="min-h-[322px] max-w-[616px] p-11 border-[1px] border-themeColor bg-[#141735] rounded-[16px]"
+              >
+                <!-- --card-heading- -->
+                <div
+                  class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+                >
+                  <h3
+                    class="text-[19px] sm:text-[26px] mx-auto sm:mx-0 text-[#fff] font-[700] font-clash"
+                  >
+                    High Earning Potential
+                  </h3>
+                </div>
+                <!-- --card-body--  -->
+                <p
+                  class="mt-[44px] text-[17px] sm:text-[21px] text-center sm:text-left text-[#fff] font-[500] font-satoshi leading-[32px]"
+                >
+                  Our staking mechanism ensures competitive APY returns, giving
+                  you the opportunity to maximize your earnings over time.
+                </p>
+              </div>
+              <!-- --single_items--  -->
+              <div
+                class="min-h-[322px] max-w-[616px] mt-7 p-11 border-[1px] border-themeColor bg-[#141735] rounded-[16px]"
+              >
+                <!-- --card-heading- -->
+                <div
+                  class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+                >
+                  <h3
+                    class="text-[19px] sm:text-[26px] mx-auto sm:mx-0 text-[#fff] font-[700] font-clash"
+                  >
+                    Fair and Transparent
+                  </h3>
+                </div>
+                <!-- --card-body--  -->
+                <p
+                  class="mt-[44px] text-[17px] sm:text-[21px] text-center sm:text-left text-[#fff] font-[500] font-satoshi leading-[32px]"
+                >
+                  Our staking mechanism ensures competitive APY returns, giving
+                  you the opportunity to maximize your earnings over time.
+                </p>
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6">
+              <div class="hidden lg:block">
+                <img class="" src="assets/img/thumbs/why-thum.png" alt="" />
+              </div>
+              <!-- --single_items--  -->
+              <div
+                class="min-h-[322px] max-w-[616px] mt-7 p-11 border-[1px] border-themeColor bg-[#141735] rounded-[16px]"
+              >
+                <!-- --card-heading- -->
+                <div
+                  class="flex pb-11 items-center justify-between border-b-[1px] border-b-[rgba(255,255,255,0.20)]"
+                >
+                  <h3
+                    class="text-[19px] sm:text-[26px] mx-auto sm:mx-0 text-[#fff] font-[700] font-clash"
+                  >
+                    No risk to your Staked ETH
+                  </h3>
+                </div>
+                <!-- --card-body--  -->
+                <p
+                  class="mt-[44px] text-[17px] sm:text-[21px] text-center sm:text-left text-[#fff] font-[500] font-satoshi leading-[32px]"
+                >
+                  Our staking mechanism ensures competitive APY returns, giving
+                  you the opportunity to maximize your earnings over time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========  Why Choose section End =========-->
+
+      <!--========  Get Started  section Start =========-->
+      <section class="py-[50px] md:py-[110px]">
+        <div class="container">
+          <div
+            style="background-image: url('assets/img/bg/Get Started_bg.png')"
+            class="flex flex-wrap gap-[31px] py-[70px] sm:py-[100px] px-[25px] sm:px-[75px] rounded-[16px] h-full lg:h-[528px] max-w-[1233px] bg-cover mx-auto"
+          >
+            <div class="w-[100%] lg:w-[55%] order-2 lg:order-1">
+              <h2
+                class="text-center sm:text-left text-[32px] sm:text-[35px] text-[#fff] font-[600] font-clash"
+              >
+                Get Started Today!
+              </h2>
+
+              <p
+                class="my-[43px] text-center sm:text-left text-[20px] sm:text-[24px] text-[#FFFFFF] font-[500] font-inter leading-[32px]"
+              >
+                the first meme coin to harness the power of Liquidity Staking
+                Derivative Protocol. Our project merges the playful nature of
+                meme coins with the intelligent strategies of smart investors.
+              </p>
+
+              <!-- --btns--  -->
+
+              <div class="flex gap-7 sm:gap-10 justify-center sm:justify-start">
+                <!-- --solid-btn--  -->
+                <a
+                  href="#"
+                  class="text-[15px] md:text-[20px] text-[#000] leading-none bg-themeColor py-[12px] px-[15px] sm:px-[24px] md:py-[15px] md:px-[35px] hover:text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+                  >Launch dApp</a
+                >
+                <!-- --link-btn--  -->
+                <a
+                  href="#"
+                  class="flex gap-2 sm:gap-3 items-center text-[15px] md:text-[20px] leading-none py-[12px] md:py-[15px] text-themeColor font-inter font-[500] transition hover:text-white"
+                  >Learn more
+                  <img src="assets/img/icons/link_btn_right_arrow.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="w-[100%] lg:w-[39%] mb-5 lg:mb-0 order-1 lg:order-2">
+              <img
+                class="mx-auto"
+                src="assets/img/thumbs/get_start_thum.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========  Get Started  section End =========-->
+    </main>
+    <!--======== Main Area End =========-->
+    <footer class="relative z-10 md:bg-[#111131] bg-transparent">
+      <!-- --shape--  -->
+      <div class="hidden md:block">
+        <img
+          class="absolute bottom-0 left-0 -z-10"
+          src="assets/img/bg/footer_left_shape.png"
+          alt=""
+        />
+        <img
+          class="absolute bottom-0 right-0 -z-10"
+          src="assets/img/bg/footer-right_shape.png"
+          alt=""
+        />
+      </div>
+      <div class="hidden md:block">
+        <img src="assets/img/bg/Footer_bg.png" alt="" class="w-full" />
+      </div>
+      <div class="container">
+        <div class="py-[70px] flex justify-center items-center">
+          <!-- --nav links --  -->
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="pb-[90px] flex flex-col md:flex-row gap-14 md:gap-4 justify-between items-center"
+        >
+          <a href="#"><img src="assets/img/logos/logo.svg" alt="" /></a>
+          <div class="flex gap-2">
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/twitter (2) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/facebook (4) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/instagram (1) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/medium 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/github 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/reddit 1.svg" alt=""
+            /></a>
+          </div>
+          <p class="text-[10.5px] text-[#fff] font-[400]">
+            © 2023 Brainz. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script>
+      $(".carsoul_wrapper").owlCarousel({
+        items: 1,
+        nav: true,
+        dot: false,
+        loop: false,
+        margin: 35,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+          "<i class='far fa-arrow-left'></i>",
+          "<img src='assets/img/icons/Slider arrow.svg' alt=''>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          768: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          1000: {
+            items: 2,
+            dots: false,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+          1400: {
+            items: 2,
+            dots: false,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+          },
+        },
+      });
+
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

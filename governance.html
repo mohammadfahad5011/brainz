@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- owl-carousel css  -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+
+    <!-- Tailwindcss CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          container: {
+            center: true,
+            padding: {
+              DEFAULT: "13px",
+              sm: "15px",
+              lg: "15px",
+              xl: "15px",
+            },
+            screens: {
+              sm: "600px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1281px",
+            },
+          },
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              clash: ["Clash Display Variable", "sans-serif"],
+              satoshi: ["Satoshi Variable", "sans-serif"],
+            },
+            colors: {
+              textColor: "#7e7d80",
+              themeColor: "#15BFFD",
+              themeColor2: "#48ffb6",
+              themeColor3: "#B095DA",
+              white: "#FFFFFF",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: Clash Display Variable;
+        src: url("./assets/Fonts/ClashDisplay-Variable.ttf");
+      }
+
+      @font-face {
+        font-family: Satoshi Variable;
+        src: url("./assets/Fonts/Satoshi-Variable.ttf");
+      }
+      @layer base {
+        body {
+          font-family: "Inter", sans-serif;
+        }
+      }
+      @layer utilities {
+        select {
+          background-image: url(./assets//img/icons/chev-down.png);
+          background-position: right 18px center;
+          background-repeat: no-repeat;
+          background-size: 11px 6px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+      }
+
+      .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 0;
+      }
+
+      .owl-nav .owl-prev {
+        display: none;
+      }
+
+      .proposals-section .owl-nav {
+        position: absolute;
+        top: -160px;
+        right: 0;
+      }
+
+      .requirements-section .owl-nav {
+        position: absolute;
+        top: -200px;
+        right: 0;
+      }
+
+      .owl-dots {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .owl-dots .owl-dot span {
+        display: inline-block !important;
+        background-color: #2e314b !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 4px;
+      }
+
+      .owl-dots .active span {
+        display: inline-block !important;
+        background-color: rgba(21, 191, 253, 0.7) !important;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .tab-content {
+        display: none;
+      }
+      .tab-container .active-tab {
+        color: #15bffd;
+        border-bottom: 2px solid #15bffd;
+        margin-bottom: -1.5px;
+      }
+      .right_fixd_carousel .owl-carousel .owl-stage-outer {
+        margin-right: -1000px;
+      }
+    </style>
+
+    <title>Governance</title>
+  </head>
+
+  <body class="bg-[#080B2A]">
+    <!--mobile menu  -->
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8 ms-auto">
+          <button
+            class="border-[2px] border-themeColor p-2 navbar-close cursor-pointer"
+          >
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-themeColor"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="staking.html"
+                >Staking</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="private_sale.html"
+                >Private sale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="presale.html"
+                >Presale</a
+              >
+            </li>
+            <li class="mb-[50px]">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="governance.html"
+                >Governance</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="block px-4 text-[16px] font-satoshi font-[700] text-[#203E62] hover:text-themeColor text-center"
+                href="#"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!--======== Header Area Start =========-->
+    <header
+      class="shadow-[0_0px_36px_0px_rgba(21,191,253,0.47)] lg:shadow-none bg-[#0B1538] lg:bg-transparent absolute top-0 left-0 w-full z-20 pb-[15px] pt-[30px] md:pb-[40px] md:pt-[40px] bg-transparent"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center">
+          <!-- --logo--  -->
+          <a href="index.html">
+            <img
+              class="hidden md:block"
+              src="assets/img/logos/logo.svg"
+              alt=""
+            />
+
+            <img
+              class="block md:hidden"
+              src="assets/img/icons/moble_logo.svg"
+              alt=""
+            />
+          </a>
+          <!-- --nav links --  -->
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-themeColor p-[10px] bg-[#141735] rounded-[32px] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+          <!-- --Border-btn--  -->
+          <div class="flex items-center gap-4 md:gap-10">
+            <a
+              href="#"
+              class="leading-none text-[12px] sm:text-[20px] py-[12px] sm:py-[15px] px-[18px] sm:px-[25px] text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+              >connect wallet</a
+            >
+            <span class="inline-block lg:hidden navbar-burger cursor-pointer">
+              <img src="assets/img/icons/burger_icon.svg" alt="" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--======== Header Area End =========-->
+
+    <!--======== Main Area Start =========-->
+    <main class="main overflow-hidden relative z-10">
+      <!-- --shapes--  -->
+      <div class="hidden md:block">
+        <img
+          src="assets/img/bg/shape_left.png"
+          class="absolute top-0 left-0 -z-10"
+          alt=""
+        />
+
+        <img
+          src="assets/img/bg/shape_right.png"
+          class="absolute top-0 right-0 -z-10"
+          alt=""
+        />
+      </div>
+      <!--======== Hero Area Start =========-->
+      <section
+        class="mt-[150px] bg-transparent pt-[100px] pb-[100px] md:pb-[200px] relative"
+      >
+        <!-- --shapes--  -->
+
+        <!-- ---stars--big-screen  -->
+        <div class="hidden md:block">
+          <img
+            class="absolute top-[10%] left-[90%] -z-10"
+            src="assets/img/icons/big_blue_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[10%] left-[60%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute top-[15%] left-[15%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+
+          <img
+            class="absolute top-[60%] left-[5%] -z-10"
+            src="assets/img/icons/medium_hite_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute bottom-[10%] left-[50%] -z-10"
+            src="assets/img/icons/small_blue_star.svg"
+            alt=""
+          />
+        </div>
+        <!-- ---stars--small-screen  -->
+        <div class="block md:hidden">
+          <img
+            class="absolute -z-10 top-[7%] right-[10%]"
+            src="assets/img/icons/yellow_big_star.svg"
+            alt=""
+          />
+          <img
+            class="absolute -z-10 top-[20%] left-[0%]"
+            src="assets/img/icons/yellow_medium_star.svg"
+            alt=""
+          />
+        </div>
+
+        <div class="container">
+          <div class="hero_content z-20">
+            <div class="hero-text">
+              <h1
+                class="text-[32px] md:text-[48px] max-w-[1223px] mx-auto text-[#fff] text-center font-[600] font-clash tracking-[0.96px]"
+              >
+                Welcome to the Brainz Finance
+                <span class="text-themeColor">Governance</span>
+                Page: Where Your Voice Shapes the Future!
+              </h1>
+              <p
+                class="text-[20px] md:text-[26px] mt-[37px] md:mt-[78px] max-w-[1124px] mx-auto text-[#ADAEB9] text-center font-[400] font-inter tracking-[0.26px]"
+              >
+                At Brainz Finance, we believe in the power of community-driven
+                decision-making. As a token holder, you have the opportunity to
+                actively participate in shaping the direction of our protocol.
+                Our governance framework empowers you to propose and vote on a
+                wide range of crucial matters that impact the Brainz ecosystem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======== Hero Area End =========-->
+
+      <!--======== Proposals  section Start =========-->
+      <section
+        class="right_fixd_carousel proposals-section py-[0px] md:py-[140px] bg-transparent md:bg-[#121533]"
+      >
+        <div class="container">
+          <div class="mb-28">
+            <!-- --section-heading--  -->
+            <h2
+              class="mb-6 text-center md:text-left text-[24px] md:text-[34px] text-themeColor font-[500] font-clash"
+            >
+              Proposals that could change the game:
+            </h2>
+
+            <p
+              class="block md:hidden text-center text-[20px] text-white font-[400] font-satoshi"
+            >
+              And so much more! The possibilities are vast, and your input
+              matters.
+            </p>
+          </div>
+
+          <div class="Proposals_Requirements_carsoul_wrapper owl-carousel">
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Token Taxes
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                Have a say in incrementing or reducing token taxes, ensuring a
+                fair and sustainable financial model.
+              </p>
+            </div>
+
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Burning
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                Influence the supply dynamics by proposing increments or
+                reductions in token burning.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Pool Winners
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                Advocate for increasing or reducing the pool winners' rewards,
+                making the experience even more thrilling.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Token Taxes
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                Have a say in incrementing or reducing token taxes, ensuring a
+                fair and sustainable financial model.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== Proposals  section End =========-->
+      <!--======== Requirements  section Start =========-->
+      <section class="right_fixd_carousel requirements-section py-[150px]">
+        <div class="container">
+          <div class="mb-28">
+            <!-- --section-heading--  -->
+            <h2
+              class="text-center md:text-left mb-6 text-[34px] text-themeColor font-[500] font-clash"
+            >
+              Requirements to make a difference:
+            </h2>
+            <p
+              class="mx-auto md:mx-0 text-center md:text-left text-[20px] max-w-[443px] text-white font-[400] font-clash"
+            >
+              To ensure a robust decision-making process, we have set the
+              following requirements:
+            </p>
+          </div>
+
+          <div
+            class="Proposals_Requirements_carsoul_wrapper owl-carousel bg-[#121533] md:bg-transparent py-[50px] md:py-0"
+          >
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  80% Majority
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                For a proposal to pass, it must receive an 80% majority vote
+                from the Brainz community, ensuring consensus and alignment.
+              </p>
+            </div>
+
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Token Holding Requirement
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                To vote on proposals, a minimum of 10,000 $Brainz tokens must be
+                held in your wallet, allowing committed participants to have
+                their voices heard.
+              </p>
+            </div>
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <!-- --card-heading- -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="mx-auto md:mx-0 text-[35px] text-themeColor font-[700] font-satoshi"
+                >
+                  Proposal Power
+                </h3>
+              </div>
+              <!-- --card-body--  -->
+              <p
+                class="text-center md:text-left mt-[30px] text-[20px] text-[rgba(255,255,255,0.8)] font-[500] font-satoshi"
+              >
+                To make a proposal, a minimum of 1,000,000 $Brainz tokens must
+                be held, enabling passionate individuals to shape the future of
+                Brainz Finance actively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== Requirements  section End =========-->
+      <!--======== Propose & Influence  section Start =========-->
+      <section class="proposals-section py-[140px] bg-[#121533]">
+        <div class="container">
+          <div class="mb-28">
+            <!-- --section-heading--  -->
+            <h2
+              class="text-center md:text-left mb-6 text-[34px] text-white font-[500] font-clash"
+            >
+              Propose & Influence : Your Power Play
+            </h2>
+          </div>
+
+          <div class="Propose_Influence_carsoul_wrapper owl-carousel">
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <div class="flex flex-col md:flex-row gap-8">
+                <span
+                  class="mx-auto md:mx-0 shrink-0 text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[50px] h-[50px] rounded-full"
+                  >1</span
+                >
+                <div class="">
+                  <!-- --card-heading- -->
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="mx-auto md:mx-0 text-[28px] text-white font-[500] font-clash uppercase"
+                    >
+                      Connect Wallet:
+                    </h3>
+                  </div>
+                  <!-- --card-body--  -->
+                  <p
+                    class="text-center md:text-left mt-[30px] text-[24px] text-[rgba(255,255,255,0.8)] font-[400] font-satoshi tracking-[0.48px]"
+                  >
+                    Link up your wallet—our portal to infinite possibilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <div class="flex flex-col md:flex-row gap-8">
+                <span
+                  class="mx-auto md:max-0 shrink-0 text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[50px] h-[50px] rounded-full"
+                  >2</span
+                >
+                <div class="">
+                  <!-- --card-heading- -->
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="mx-auto md:mx-0 text-[28px] text-white font-[500] font-clash uppercase"
+                    >
+                      Token Up:
+                    </h3>
+                  </div>
+                  <!-- --card-body--  -->
+                  <p
+                    class="text-center md:text-left mt-[30px] text-[24px] text-[rgba(255,255,255,0.8)] font-[400] font-satoshi tracking-[0.48px]"
+                  >
+                    Ensure your wallet packs the required $Brainz tokens. It's
+                    your ticket to propose like a boss.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <div class="flex flex-col md:flex-row gap-8">
+                <span
+                  class="mx-auto md:mx-0 shrink-0 text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[50px] h-[50px] rounded-full"
+                  >1</span
+                >
+                <div class="">
+                  <!-- --card-heading- -->
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="mx-auto md:mx-0 text-[28px] text-white font-[500] font-clash uppercase"
+                    >
+                      Connect Wallet:
+                    </h3>
+                  </div>
+                  <!-- --card-body--  -->
+                  <p
+                    class="text-center md:text-left mt-[30px] text-[24px] text-[rgba(255,255,255,0.8)] font-[400] font-satoshi tracking-[0.48px]"
+                  >
+                    Link up your wallet—our portal to infinite possibilities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- --single_items--  -->
+            <div class="min-h-[150px] p-4">
+              <div class="flex flex-col md:flex-row gap-8">
+                <span
+                  class="mx-auto md:max-0 shrink-0 text-[27px] flex justify-center items-center text-[#fff] font-[700] bg-themeColor font-clash w-[50px] h-[50px] rounded-full"
+                  >2</span
+                >
+                <div class="">
+                  <!-- --card-heading- -->
+                  <div class="flex items-center justify-between">
+                    <h3
+                      class="mx-auto md:mx-0 text-[28px] text-white font-[500] font-clash uppercase"
+                    >
+                      Token Up:
+                    </h3>
+                  </div>
+                  <!-- --card-body--  -->
+                  <p
+                    class="text-center md:text-left mt-[30px] text-[24px] text-[rgba(255,255,255,0.8)] font-[400] font-satoshi tracking-[0.48px]"
+                  >
+                    Ensure your wallet packs the required $Brainz tokens. It's
+                    your ticket to propose like a boss.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--======== Propose & Influence  section End =========-->
+
+      <!--========  Create  Proposal section Start =========-->
+      <section class="py-[50px] md:py-20 lg:py-28">
+        <div class="container">
+          <!-- --1st-part--  -->
+          <div
+            class="mb-16 grid grid-cols-12 py-[50px] md:py-0 px-[30px] md:px-0 bg-[#121533] md:bg-transparent rounded-[13px] md:border-none border-[1px] border-themeColor"
+          >
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+              <!-- --solid-btn--  -->
+              <a
+                href="#"
+                class="hidden md:inline-flex gap-2 items-center text-[20px] text-[#000] bg-themeColor py-[15px] px-[35px] leading-none hover:text-themeColor font-inter font-[500] border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+              >
+                <img src="assets/img/icons/plus_icon.svg" alt="" /> Create a
+                Proposal
+              </a>
+            </div>
+            <div
+              class="col-span-12 md:col-span-6 lg:col-span-4 text-center md:text-left"
+            >
+              <a
+                href="#"
+                class="w-[297px] text-center leading-none text-[20px] py-[15px] px-[25px] text-themeColor font-inter font-[500] inline-block border-[1px] border-themeColor rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                >connect wallet</a
+              >
+            </div>
+            <div
+              class="mt-[58px] lg:mt-0 flex justify-center flex-wrap gap-[60px] col-span-12 md:col-span-12 lg:col-span-4"
+            >
+              <div class="text-center">
+                <h6
+                  class="mb-2 text-[15px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                >
+                  your wallet $brains balance
+                </h6>
+                <h2 class="text-[20px] text-[#90FF9C] font-[700] font-satoshi">
+                  0 $Brainz
+                </h2>
+              </div>
+              <div class="text-center">
+                <h6
+                  class="mb-2 text-[15px] text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                >
+                  Your pool balance
+                </h6>
+                <h2 class="text-[20px] text-[#15BFFD] font-[700] font-satoshi">
+                  0 $Brainz
+                </h2>
+              </div>
+              <div class="flex gap-3 md:gap-9 flex-wrap justify-center">
+                <!-- --single-tip--  -->
+                <div
+                  class="w-[205px] md:w-auto inline-flex gap-8 justify-between rounded-[6px] bg-[#0C1C35] p-3"
+                >
+                  <h6
+                    class="shrink-0 text-[11px] text-white font-[400] font-satoshi"
+                  >
+                    Eligibility for Proposal
+                  </h6>
+                  <img src="assets/img/icons/green_thick.svg" alt="" />
+                </div>
+                <!-- --single-tip--  -->
+                <div
+                  class="w-[205px] md:w-auto inline-flex gap-8 justify-between rounded-[6px] bg-[#0C1C35] p-3"
+                >
+                  <h6
+                    class="shrink-0 text-[11px] text-white font-[400] font-satoshi"
+                  >
+                    Eligibility for voting
+                  </h6>
+                  <img src="assets/img/icons/red_cross.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-span-12 md:col-span-6 lg:col-span-4 text-center mt-[35px]"
+            >
+              <!-- --solid-btn--  -->
+              <a
+                href="#"
+                class="inline-flex md:hidden gap-2 items-center text-[20px] text-[#000] bg-themeColor py-[15px] px-[35px] leading-none hover:text-themeColor font-inter font-[500] border-[1px] border-themeColor rounded-[30px] hover:border-[1px] hover:border-themeColor hover:rounded-[30px] transition hover:bg-transparent"
+              >
+                <img src="assets/img/icons/plus_icon.svg" alt="" /> Create a
+                Proposal
+              </a>
+            </div>
+          </div>
+
+          <!-- --2nd-part--  -->
+
+          <div class="">
+            <!-- --heading--  -->
+            <h6 class="mb-3 text-[22px] text-white font-[500] font-satoshi">
+              List of proposal
+            </h6>
+
+            <!-- --List Nav --  -->
+
+            <div
+              class="tab-container flex gap-10 mb-5 border-b-[2px] border-b-[rgba(255,255,255,0.5)]"
+            >
+              <div
+                class="cursor-pointer text-[16px] p-3 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi uppercase tab tab-title active-tab"
+                data-tab="tab1"
+              >
+                Current
+              </div>
+              <div
+                class="cursor-pointer text-[16px] p-3 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi uppercase tab tab-title"
+                data-tab="tab2"
+              >
+                Past
+              </div>
+            </div>
+
+            <!-- --single-Proposals--conatiner  -->
+
+            <div id="tab1" class="tab-content">
+              <div class="flex flex-col gap-6">
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#1</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS: <span class="text-[#90FF9C]">SUCCESSFUL</span>
+                      </h6>
+                    </div>
+                    <p
+                      class="text-[11px] md:text-[16px] text-white font-[500] font-satoshi uppercase"
+                    >
+                      executed
+                    </p>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#2</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS: <span class="text-[#90FF9C]">SUCCESSFUL</span>
+                      </h6>
+                    </div>
+                    <p
+                      class="text-[11px] md:text-[16px] text-white font-[500] font-satoshi uppercase"
+                    >
+                      Execution Time - 30 days
+                    </p>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#3</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS: <span class="text-[#FD1515]">REJECTED</span>
+                      </h6>
+                    </div>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center md:text-right">
+                  <!-- --link-btn--  -->
+                  <a
+                    href="#"
+                    class="inline-flex gap-3 mt-7 items-center text-[18px] md:text-[25px] py-[15px] text-themeColor font-inter font-[500] transition hover:text-white"
+                    >View more
+                    <img
+                      src="assets/img/icons/link_btn_right_arrow.svg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- --single-Proposals--conatiner  -->
+
+            <div id="tab2" class="tab-content">
+              <div class="flex flex-col gap-6">
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#1</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS:
+                        <span class="text-[#90FF9C]">VOTING ONGOING</span>
+                      </h6>
+                    </div>
+                    <p
+                      class="text-[11px] md:text-[16px] text-white font-[500] font-satoshi uppercase"
+                    >
+                      executed
+                    </p>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="mt-5 md:mt-0 flex gap-7 md:ml-auto">
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#90FF9C;] font-inter font-[500] inline-block border-[1px] border-[#90FF9C;] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Support</a
+                      >
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#FF9090] font-inter font-[500] inline-block border-[1px] border-[#FF9090] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Reject</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#1</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS:
+                        <span class="text-[#90FF9C]">VOTING ONGOING</span>
+                      </h6>
+                    </div>
+                    <p
+                      class="text-[11px] md:text-[16px] text-white font-[500] font-satoshi uppercase"
+                    >
+                      executed
+                    </p>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="mt-5 md:mt-0 flex gap-7 md:ml-auto">
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#90FF9C;] font-inter font-[500] inline-block border-[1px] border-[#90FF9C;] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Support</a
+                      >
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#FF9090] font-inter font-[500] inline-block border-[1px] border-[#FF9090] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Reject</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- --single-Proposal--  -->
+                <div class="px-10 py-[33px] rounded-[5px] bg-[#0C1C35]">
+                  <!-- --top-part--  -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4 md:gap-20">
+                      <span
+                        class="text-[16px] md:text-[24px] text-white font-[500] font-satoshi"
+                        >#1</span
+                      >
+                      <h6
+                        class="text-[13px] md:text-[20px] text-white font-[500] font-satoshi uppercase"
+                      >
+                        STATUS:
+                        <span class="text-[#90FF9C]">VOTING ONGOING</span>
+                      </h6>
+                    </div>
+                    <p
+                      class="text-[11px] md:text-[16px] text-white font-[500] font-satoshi uppercase"
+                    >
+                      executed
+                    </p>
+                  </div>
+                  <!-- --middle_part--  -->
+
+                  <div class="">
+                    <!-- --title--  -->
+
+                    <h6
+                      class="text-[16px] md:text-[24px] my-[10px] text-white font-[500] font-satoshi"
+                    >
+                      Title
+                    </h6>
+
+                    <p
+                      class="text-[13px] md:text-[19px] pb-4 min-h-[135px] border-b-[1px] border-b-[rgba(255,255,255,0.20)] text-white font-[500] font-satoshi tracking-[0.38px]"
+                    >
+                      Lorem ipsum dolor sit amet consectetur. Pellentesque duis
+                      consequat a aliquam natoque cras tortor. Id consectetur
+                      nullam nibh gravida tempor massa pharetra vitae. Sapien
+                      tortor diam ipsum amet velit egestas molestie duis eget.
+                      Id enim id quam nulla. Semper sit maecenas hac nibh
+                      viverra. Ut dictum magna iaculis posuere elementum
+                      fringilla sed tellus metus.
+                    </p>
+                  </div>
+                  <!-- ---bottom-part--  -->
+
+                  <div
+                    class="mt-5 gap-5 md:gap-[100px] flex flex-wrap items-center"
+                  >
+                    <div class="w-[285px]">
+                      <h2
+                        class="text-[14px] mb-5 text-white font-[500] font-satoshi uppercase"
+                      >
+                        Vote percentages ( 54.21%)
+                      </h2>
+                      <!-- --range-slider--  -->
+                      <div
+                        class="slider w-[285px] h-[10px] bg-[#90FF9C] relative rounded-[5px]"
+                      >
+                        <div
+                          class="slider-thumb w-1 h-6 bg-white absolute top-[-7px] rounded-[50%] cursor-pointer"
+                        ></div>
+                        <div
+                          class="slider-track w-[50%] h-[10px] bg-[#FD1515] absolute top-0 rounded-[5px]"
+                        ></div>
+                      </div>
+                      <!-- --Vot count --  -->
+                      <div class="mt-5 flex justify-between items-center">
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Reject: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Vote: 88 %
+                        </h6>
+                        <h6
+                          class="text-[10px] mb-5 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Support: 88 %
+                        </h6>
+                      </div>
+                    </div>
+
+                    <div class="flex gap-[60px]">
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          Date of creation
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                      <div class="text-center">
+                        <h6
+                          class="text-[13px] mb-2 text-[rgba(255,255,255,0.5)] font-[500] font-satoshi"
+                        >
+                          End date
+                        </h6>
+                        <p
+                          class="text-[13px] text-themeColor font-[500] font-satoshi"
+                        >
+                          12/06/2023
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="mt-5 md:mt-0 flex gap-7 md:ml-auto">
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#90FF9C;] font-inter font-[500] inline-block border-[1px] border-[#90FF9C;] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Support</a
+                      >
+                      <!-- ---btns--  -->
+                      <a
+                        href="#"
+                        class="leading-none text-[20px] py-[15px] px-[25px] text-[#FF9090] font-inter font-[500] inline-block border-[1px] border-[#FF9090] rounded-[30px] transition hover:bg-themeColor hover:text-[#000]"
+                        >Reject</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center md:text-right">
+                  <!-- --link-btn--  -->
+                  <a
+                    href="#"
+                    class="inline-flex gap-3 mt-7 items-center text-[18px] md:text-[25px] py-[15px] text-themeColor font-inter font-[500] transition hover:text-white"
+                    >View more
+                    <img
+                      src="assets/img/icons/link_btn_right_arrow.svg"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========  Create  Proposal section End =========-->
+
+      <!--========  Get Started  section Start =========-->
+      <section class="py-[50px] md:py-[100px]">
+        <div class="container">
+          <div
+            class="flex flex-wrap items-center gap-[31px] py-[75px] sm:py-[100px] px-[25px] sm:px-[75px] rounded-[10px] bg-[#101332]"
+          >
+            <div class="w-[100%] lg:w-[58%] order-2 lg:order-1">
+              <p
+                class="text-center md:text-left my-[43px] text-[20px] md:text-[26px] text-[#FFFFFF] font-[400] font-inter tracking-[0.26px] leading-[32px]"
+              >
+                Join the Brainz Governance Community today and seize the
+                opportunity to contribute your ideas, shape the protocol's
+                destiny, and unlock the full potential of our ecosystem.
+              </p>
+
+              <p
+                class="text-center md:text-left block md:hidden text-[20px] md:text-[26px] text-[#FFFFFF] font-[400] font-inter tracking-[0.26px] leading-[32px]"
+              >
+                Together, we can build a decentralized future where every voice
+                matters. Let your voice be heard at Brainz Finance Governance!
+              </p>
+            </div>
+            <div class="w-[100%] lg:w-[39%] mb-5 lg:mb-0 order-1 lg:order-2">
+              <img
+                class="mx-auto"
+                src="assets/img/thumbs/get_start_thum.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--========  Get Started  section End =========-->
+
+      <!--========  text  section Start =========-->
+      <section class="hidden md:block mb-[100px]">
+        <div class="container">
+          <p
+            class="text-[33px] max-w-[1205px] mx-auto text-center text-white font-[400] font-satoshi leading-[55px] tracking-[0.66px]"
+          >
+            Together, we can build a decentralized future where every voice
+            matters. Let your voice be heard at Brainz Finance Governance!
+          </p>
+        </div>
+      </section>
+      <!--========  text  section End =========-->
+    </main>
+    <!--======== Main Area End =========-->
+    <footer class="relative z-10 bg-transparent md:bg-[#111131]">
+      <!-- --shape--  -->
+      <div class="hidden md:block">
+        <img
+          class="absolute bottom-0 left-0 -z-10"
+          src="assets/img/bg/footer_left_shape.png"
+          alt=""
+        />
+        <img
+          class="absolute bottom-0 right-0 -z-10"
+          src="assets/img/bg/footer-right_shape.png"
+          alt=""
+        />
+      </div>
+      <div class="hidden md:block">
+        <img src="assets/img/bg/Footer_bg.png" alt="" class="w-full" />
+      </div>
+      <div class="container">
+        <div class="py-[70px] flex justify-center items-center">
+          <!-- --nav links --  -->
+          <ul class="gap-9 hidden lg:flex">
+            <li>
+              <a
+                href="staking.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Staking</a
+              >
+            </li>
+            <li>
+              <a
+                href="private_sale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Private sale</a
+              >
+            </li>
+            <li>
+              <a
+                href="presale.html"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+              >
+                Presale</a
+              >
+            </li>
+            <li>
+              <a
+                href="governance.html"
+                class="text-[17px] text-themeColor p-[10px] bg-[#141735] rounded-[32px] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Governance</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[17px] text-[#fff] font-[700] font-satoshi transition hover:text-[#15BFFD]"
+                >Whitepaper</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="pb-[90px] flex flex-col md:flex-row gap-14 md:gap-4 justify-between items-center"
+        >
+          <a href="#"><img src="assets/img/logos/logo.svg" alt="" /></a>
+          <div class="flex gap-2">
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/twitter (2) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/facebook (4) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/instagram (1) 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/medium 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/github 1.svg" alt=""
+            /></a>
+            <a
+              href="#"
+              class="flex justify-center items-center h-[38px] w-[38px] rounded-full border-[1px] border-[rgba(255,255,255,0.5)]"
+              ><img src="assets/img/icons/reddit 1.svg" alt=""
+            /></a>
+          </div>
+          <p class="text-[10.5px] text-[#fff] font-[400]">
+            © 2023 Brainz. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script>
+      //Proposals_Requirements_carsoul_wrapper
+      $(".Proposals_Requirements_carsoul_wrapper").owlCarousel({
+        items: 1,
+        nav: true,
+        dots: true,
+        loop: false,
+        margin: 35,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+          "<i class='far fa-arrow-left'></i>",
+          "<img src='assets/img/icons/Slider arrow.svg' alt=''>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          768: {
+            items: 1,
+            dots: true,
+            nav: false,
+            stagePadding: 0,
+          },
+          1000: {
+            items: 2,
+            dots: false,
+            nav: true,
+            margin: 40,
+            stagePadding: 0,
+          },
+          1400: {
+            items: 2,
+            dots: false,
+            nav: true,
+            loop: false,
+            stagePadding: 0,
+            margin: 120,
+          },
+        },
+      });
+
+      //Propose_Influence_carsoul_wrapper
+
+      $(".Propose_Influence_carsoul_wrapper").owlCarousel({
+        items: 1,
+        nav: false,
+        dots: true,
+        loop: false,
+        margin: 35,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        responsiveClass: true,
+        navText: [
+          "<i class='far fa-arrow-left'></i>",
+          "<img src='assets/img/icons/white_arrow.svg' alt=''>",
+        ],
+        responsive: {
+          0: {
+            items: 1,
+            nav: false,
+            dots: true,
+            stagePadding: 0,
+          },
+          768: {
+            items: 1,
+            nav: false,
+            dots: true,
+            stagePadding: 0,
+          },
+          1000: {
+            items: 2,
+            nav: true,
+            dots: false,
+            loop: false,
+            margin: 40,
+          },
+          1400: {
+            items: 2,
+            nav: true,
+            dots: false,
+            loop: false,
+            margin: 120,
+          },
+        },
+      });
+
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+
+      //Range slider
+
+      // Get all the sliders on the page
+      var sliders = document.querySelectorAll(".slider");
+
+      // Loop through each slider
+      sliders.forEach(function (slider) {
+        var thumb = slider.querySelector(".slider-thumb");
+        var track = slider.querySelector(".slider-track");
+
+        // Set initial value to 50%
+        var initialValue = 50;
+
+        // Calculate initial position based on the initial value
+        var initialPosition = (initialValue / 100) * slider.offsetWidth;
+        thumb.style.left = initialPosition + "px";
+        track.style.width = initialPosition + "px";
+
+        thumb.addEventListener("mousedown", function (event) {
+          event.preventDefault();
+
+          window.addEventListener("mousemove", moveThumb);
+          window.addEventListener("mouseup", stopThumb);
+        });
+
+        function moveThumb(event) {
+          var rect = slider.getBoundingClientRect();
+          var x = event.clientX - rect.left;
+          var percentage = (x / slider.offsetWidth) * 100;
+
+          if (percentage < 0) {
+            percentage = 0;
+          } else if (percentage > 100) {
+            percentage = 100;
+          }
+
+          thumb.style.left = percentage + "%";
+          track.style.width = percentage + "%";
+        }
+
+        function stopThumb() {
+          window.removeEventListener("mousemove", moveThumb);
+          window.removeEventListener("mouseup", stopThumb);
+        }
+      });
+
+      // ----Tab---
+      $(document).ready(function () {
+        // Show the first tab by default
+        $(".tab-content:first").show();
+
+        // Handle tab click event
+        $(".tab").click(function () {
+          // Remove active class from all tabs
+          $(".tab").removeClass("active-tab");
+
+          // Add active class to the clicked tab
+          $(this).addClass("active-tab");
+
+          // Hide all tab content
+          $(".tab-content").hide();
+
+          // Show the clicked tab content
+          var tabId = $(this).attr("data-tab");
+          $("#" + tabId).show();
+        });
+      });
+    </script>
+  </body>
+</html>
